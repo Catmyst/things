@@ -32,7 +32,7 @@
 		width: 330px;
 		transform: translate(-0.5%, 0%);
 	}
-	.bird {
+	.bird { 
 		position: fixed;
 		top: 400px;
 		right: 270px;
@@ -58,6 +58,11 @@
 		width: 20px;
 		bottom:0px;
 	}
+	.button {
+		position:fixed;
+		top: 5px;
+		left: 5px;
+	}
 	h1 {
 		color: white;
 		text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
@@ -72,6 +77,7 @@
  		</style>
  		<div id="gamebg" class="gamebg" onclick="movement()">
  			<div class="gametitle"><h1 >goofy bird</h1></div>
+ 			<button class="button" onclick="location.href='https://catmyst.github.io/brainrot/goofy_bird/'">restart</button>
  			<h2><span>Time Survived: <span class="score" id="score">0</span> Seconds</span></h2>
  			<h1 id="alert"></h1>
  			<img id="bird" class="bird" src="bird.jpeg">
