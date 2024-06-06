@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<title> hokagestore </title>
+	</head>
+
+	<body>
+		<style>
+			body{
+				color: #ffffff;
+				margin-top: 50px;
+				background-color: #3c3c3c;
+			}
+			.header {
+				background-color: #282828;
+				position: fixed;
+ 			 	top: 0;    
+  				left:0;
+  				right:0;
+  				margin:0 auto;
+  				width: 100%;
+ 				height: 50px;
+  				border:none;
+ 				text-overflow:ellipsis;
+  				overflow:hidden;
+  			}
+  			.menu {
+  				margin-left: 10px;
+  				width: 25px;
+  				height: 25px;
+				font-size: 20px;
+  			}
+			.logo, .search, .back {
+				margin-left: 10px;
+				max-width: 25px;
+				max-length: 25px;
+				padding-top: 15px;
+			}
+			.name {
+				margin-left: 10px;
+				font-size: 25px;
+				font-weight: bold;
+				margin-right: 5px;
+			}
+			.search{
+				margin-right: 10px;
+			 	max-length: 25px;
+			}
+			.footer {
+				background-color: #282828;
+				position: ;
+ 			 	top: 0;    
+  				left:0;
+  				right:0;
+  				margin:0 auto;
+  				width: 100%;
+ 				height: 50px;
+  				border: none;
+ 				text-overflow:ellipsis;
+  				overflow:hidden;
+			}
+			.uid {
+				width: 100px;
+			}
+			.sid {
+				width: 50px;
+			}
+			.item {
+				color: #000000;
+				background-color: #ffffff;
+				margin: 10px;
+				list-style-type: none;
+			}
+			.downline {
+				display: block;
+			}
+			.inline {
+				display: inline-block;
+			}
+
+		</style>
+		<header class="header" type="header">
+				<button class="menu" type="menu">≡</button>
+				<img class="logo" type="logo" src="https://drive.google.com/thumbnail?id=1JzSavbihvabjZkKyx5F6KzRyy349I-Fi&sz=w1000"> 
+				<p1 class="name" type="name">HOKAGESTORE</p1>
+				<img align="right" class="search" src="https://drive.google.com/thumbnail?id=1Ki7-viY3Y9wnVluhUEepgTQsJB4c8tjY&sz=w1000">
+		</header>
+		<button class="back" onclick="location.href='hokagestore.html';">←</button>
+		<div>
+			<p>TOPUP MOBILE LEGENDS</p>
+			
+			<form>
+				<div class="inine">
+					<label for="uid"> 
+						masukkan user ID: 
+						<input class="uid" type="number" id="uid" name="uid" placeholder="user ID" required>
+						<input class="sid" type="number" id="sid" name="sid" placeholder="(0123)" required>
+					</label>
+				</div>
+
+				<div class="inline"> contoh: <img src="https://drive.google.com/thumbnail?id=1RnLnmdmGJgTKHUtOVSH6ADiXdSi54v9u&sz=w1000/"/>	</div>
+
+				<div class="inline">
+					<label for="nn">
+						masukkan Nickname:
+						<input class="nn" type="text" id="nn" name="nn" placeholder="Jono*831" required>
+					</label>
+				</div>
+
+				<div class="inline">
+					<label for="order">
+					pilih jumlah diamond:
+					<select id="order">
+						<option value="ML5_S1">5 Diamond</option>
+						<option value="ML12_S1">12 Diamond</option>
+					</select>
+					</label>
+				</div>
+
+				<div class="inline">
+					<label for="payment">
+						Pilih metode pembayaran:
+						<select id="payment">
+							<option value="qris">qris</option>
+							<option value="ovo">ovo</option>
+						</select>
+				</div>
+
+				</div>
+
+			</form>
+		</div>
+			<button id="conf" onclick= "confirm()">konfirmasi pembayaran</button>
+			<button id="consol" onclick="consool()">console</button>
+		<footer class="footer">
+			yahaha hayyuk
+		</footer>
+
+		<script>
+			let uid = document.getElementById("uid");
+			let sid = document.getElementById("sid");
+			let nn = document.getElementById("nn");
+			let order = document.getElementById("order")
+			let payment = document.getElementById("payment");
+			let conf = document.getElementById("conf");
+
+			let consol = document.getElementById("consol")
+			
+			function consool(){
+				console.log(uid.value)
+				console.log(sid.value)
+			}
+			function confirm() {
+				let Iuid = uid.value
+				let Isid = sid.value
+				let Inn = nn.value
+				let Iorder = order.value
+				let Ipayment = payment.value
+				var link = location.href="https://wa.me/6285692979765/?text=%F0%9F%92%8E%20*TOPUP%20MOBILE%20LEGENDS*%20%F0%9F%92%8E%0A%0AUser ID:"+Iuid+"%0AServer ID:"+Isid+"%0ANickname:"+Inn+"%0APilihan Order:"+ Iorder+"%0APilihan metode pembayaran:"+ Ipayment
+				console.log(link)
+			}
+		</script>
+	</body>
+</html>

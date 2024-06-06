@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>	kalkulator </title>
+
+	</head>
+
+	<body>
+		<style>
+			body {
+
+			}
+			.inline {
+				display: block;
+			}
+			.button, .number, .operation, .result, .comma {
+				margin: 10px;
+				height: 100px;
+				width: 100px;
+				font-size: 50px;
+			}
+
+			.inputs {
+				margin: 10px;
+				height: 200px;
+				width: 470px;
+				border:1px solid #767676;
+				border-radius: 1%;
+				background-color: #efefef;
+				word-wrap: break-word;
+			}
+		</style>
+			<h1 id="title" class="title">kalkulator cuyy</h1>
+			<button id="clear" onclick="input('clr')">clear input!</button>
+			<button id="test" onclick="input('del')"> delete last input! </button>
+			<h2 id="inputs" class="inputs"></h2>
+			
+			<span class="inline">
+			<button id="1" class="number" onclick="input(1)"/>1</button>
+			<button id="2" class="number" onclick="input(2)"/>2</button>
+			<button id="3" class="number" onclick="input(3)"/>3</button>
+			<button id="plus" class="operation" onclick="input('+')"/>+</button>
+		</span>
+			<span class="inline">
+			<button id="4" class="number" onclick="input(4)"/>4</button>
+			<button id="5" class="number" onclick="input(5)"/>5</button>
+			<button id="6" class="number" onclick="input(6)"/>6</button>
+			<button id="minus" class="operation" onclick="input('-')"/>-</button>
+		</span>
+			<span class="inline">
+			<button id="7" class="number" onclick="input(7)"/>7</button>
+			<button id="8" class="number" onclick="input(8)"/>8</button>
+			<button id="9" class="number" onclick="input(9)"/>9</button>
+			<button id="times" class="operation" onclick="input('*')"/>*</button>
+		</span>
+			<span class="inline">
+			<button id="equals" class="result" onclick="input('=')"/>=</button>
+			<button id="0" class="number" onclick="input(0)"/>0</button>
+			<button id="comma" class="comma" onclick="input('.')"/>,</button>
+			<button id="divide" class="operation" onclick="input('/')"/>/</button>
+
+		<script>
+			const equals = document.getElementById("equals");
+			const zero = document.getElementById("0");
+			equals.disabled = true
+			zero.disabled = true
+			function input(j) {
+					let x = parseInt(inputs.innerHTML.charAt(inputs.innerHTML.length -1));
+					if(j === "." && x % 1 == 0 && typeof x == "number") {
+						inputs.innerHTML +=".";
+						comma.disabled = true
+						console.log("a")
+					}
+					else if(j === 'clr') {
+						inputs.innerHTML = ""
+						equals.disabled = true
+						comma.disabled = false;
+						console.log("b")
+					}
+					else if(j === 'del') {
+						if (inputs.innerHTML.indexOf('.') == inputs.innerHTML.length - 1){
+						inputs.innerHTML = inputs.innerHTML.substring(0, inputs.innerHTML.length - 1);
+						comma.disabled = false;
+						}
+						else {
+						inputs.innerHTML = inputs.innerHTML.substring(0, inputs.innerHTML.length - 1)
+						}
+						console.log("c")
+					}
+					else if(j === '=') {
+						let sum = eval(inputs.innerHTML)
+						inputs.innerHTML = sum;
+						equals.disabled = true
+
+						if (sum % 1 == 0) {			
+							comma.disabled = false;
+						console.log("df")
+						}
+						else if(sum % 1 < 0 || sum % 1 > 0 ){
+							comma.disabled = true;
+						console.log("dt")
+					}	
+						
+					}
+					else if(typeof j == "number") {
+						console.log(inputs.innerHTML.indexOf('0'))
+							if (inputs.innerHTML.indexOf('0') == 0){
+							inputs.innerHTML = j
+				//			zero.disabled = false
+						console.log("num")
+						}
+						else {
+							inputs.innerHTML += j 
+							//comma.disabled = false;
+						console.log("num")
+							zero.disabled = false
+						}
+					}
+					else if (j == "-" && inputs.innerHTML.length == 0) {
+					inputs.innerHTML = inputs.innerHTML+j
+					comma.disabled = false;
+					equals.disabled = false
+					zero.disabled = true
+					console.log("operneg")
+					}
+					else if(x % 1 == 0 && typeof x == "number" && typeof j == "string") {
+					inputs.innerHTML = inputs.innerHTML+' '+ j +' '
+					comma.disabled = false;
+					equals.disabled = false
+					zero.disabled = true
+				//	zero.disabled = true
+						
+					console.log("oper")
+					}
+
+					else{ 
+						console.log("fail")
+					}	
+				 } 
+			
+	
+		</script>
+	</body>
+</html>

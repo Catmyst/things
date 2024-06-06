@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>	kalkulator </title>
+
+	</head>
+
+	<body>
+		<style>
+			body {
+
+			}
+			.inline {
+				display: block;
+			}
+			.button, .number, .operation, .result, .comma {
+				margin: 10px;
+				height: 100px;
+				width: 100px;
+				font-size: 50px;
+			}
+
+			.inputs {
+				margin: 10px;
+				height: 200px;
+				width: 470px;
+				border:1px solid #767676;
+				border-radius: 1%;
+				background-color: #efefef;
+				word-wrap: break-word;
+			}
+		</style>
+			<h1 id="title" class="title">kalkulator cuyy</h1>
+			<button id="clear">clear input!</button>
+			<button id="test"> delete last input! </button>
+			<h2 id="inputs" class="inputs"> </h2>
+			
+			<span class="inline">
+			<button id="1" class="number" onclick="input('1')"/>1</button>
+			<button id="2" class="number" onclick="input('2')"/>2</button>
+			<button id="3" class="number" onclick="input('3')"/>3</button>
+			<button id="plus" class="operation" onclick="inputopp('+')"/>+</button>
+		</span>
+			<span class="inline">
+			<button id="4" class="number" onclick="input('4')"/>4</button>
+			<button id="5" class="number" onclick="input('5')"/>5</button>
+			<button id="6" class="number" onclick="input('6')"/>6</button>
+			<button id="minus" class="operation" onclick="inputopp('-')"/>-</button>
+		</span>
+			<span class="inline">
+			<button id="7" class="number" onclick="input('7')"/>7</button>
+			<button id="8" class="number" onclick="input('8')"/>8</button>
+			<button id="9" class="number" onclick="input('9')"/>9</button>
+			<button id="times" class="operation" onclick="inputopp('*')"/>*</button>
+		</span>
+			<span class="inline">
+			<button id="equals" class="result" />=</button>
+			<button id="0" class="number" />0</button>
+			<button id="comma" class="comma" />,</button>
+			<button id="divide" class="operation" onclick="inputopp('/')"/>/</button>
+
+		<script>
+			/*const one = document.getElementById("1");
+			const two = document.getElementById("2");
+			const three = document.getElementById("3");
+			const four = document.getElementById("4");
+			const five = document.getElementById("5");
+			const six = document.getElementById("6");
+			const seven = document.getElementById("7");
+			const eight = document.getElementById("8");
+			const nine = document.getElementById("9");
+			const zero = document.getElementById("0"); */
+			const comma = document.getElementById("comma");
+			const plus = document.getElementById("plus");
+			const minus = document.getElementById("minus");
+			const times = document.getElementById("times");
+			const divide = document.getElementById("divide");
+			const equals = document.getElementById("equals");
+			const clear = document.getElementById("clear");
+			const test = document.getElementById("test");
+			const inputs = document.getElementById("inputs");
+
+
+			/*one.onclick = input1;
+			two.onclick = input2;
+			three.onclick = input3;
+			four.onclick = input4;
+			five.onclick = input5;
+			six.onclick = input6;
+			seven.onclick = input7;
+			eight.onclick = input8;
+			nine.onclick = input9;
+			zero.onclick = input0; */
+			plus.onclick = inputPlus;
+			minus.onclick = inputMinus;
+			//times.onclick = inputTimes;
+			divide.onclick = inputDivide;
+			comma.onclick = inputComma;
+			equals.onclick = equal;
+			clear.onclick = clears;
+			test.onclick = testing;
+
+			
+			//if (inputstr.charAt(inputstr.length -1) == "+" || inputstr.charAt(inputstr.length -1) == "." || inputstr.charAt(inputstr.length -1) == " " || inputstr.charAt(inputstr.length -1) == "-" || inputstr.charAt(inputstr.length -1) == "*" || inputstr.charAt(inputstr.length -1) == "/") { return;}
+					
+
+			function testing() {
+				let inputstr = input.innerHTML
+					input.innerHTML = inputstr.substring(0, inputstr.length - 1)} 
+			
+		
+			function input(i) {
+				console.log(parseInt(i))
+				inputs.innerHTML += parseInt(i)
+			}
+
+			function inputopp(j) {
+					let x = parseInt(inputs.innerHTML.charAt(inputs.innerHTML.length -1))
+					if(x % 1 == 0 && typeof x == "number" && typeof j ==! "number") {
+					inputs.innerHTML +=  j ;
+					comma.disabled = false;
+				}
+					else{ 
+						console.log(j)
+			}	
+				 }
+			
+
+			/*function input1() {
+				input.innerHTML += parseInt(1) 
+			}
+			function input2() {
+				input.innerHTML += parseInt(2) 
+			}
+			function input3() {
+				input.innerHTML += parseInt(3)
+			}
+			function input4() {
+				input.innerHTML += parseInt(4) 
+			}
+			function input5() {
+				input.innerHTML += parseInt(5) 
+			}
+			function input6() {
+				input.innerHTML += parseInt(6) 
+			}
+			function input7() {
+				input.innerHTML += parseInt(7) 
+			}
+			function input8() {
+				input.innerHTML += parseInt(8) 
+			}
+			function input9() {
+				input.innerHTML += parseInt(9) 
+			}
+			function input0() {
+				input.innerHTML += parseInt(0)
+			} 
+			*/
+			
+			//ini function asli tadinya ribet bat
+			function inputComma() {
+				let inputstr = inputs.innerHTML
+				let x = parseInt(inputstr.charAt(inputstr.length -1))
+				if(x % 1 == 0 && typeof x == "number") {
+					input.innerHTML += ".";
+					comma.disabled = true;
+				}
+
+				else {
+
+				}
+			}
+				//function koma sebelum pake disabled :
+				/*for (let i = 0; i <inputstr.length ; i++) {
+				let char = inputstr.charAt(i)
+
+
+					if(char == ".") {
+							let inputsubstr = inputstr.substring(i+1, inputstr.length)
+							if (inputsubstr.indexOf(".") > -1) {
+					input.innerHTML = inputstr.substring(0, inputstr.length - 1)
+				}
+					} */
+
+			function equal() {
+				inputs.innerHTML = eval(input.innerHTML);
+				let inputstr = inputs.innerHTML 
+				console.log(inputstr.indexOf("."))
+				if(inputstr.indexOf(".") > -1) {
+					comma.disabled = true;
+				}
+				else {
+				comma.disabled = false;
+				}
+			}
+			function clears() {
+				inputs.innerHTML = " "
+				comma.disabled = false;
+			}
+
+		</script>
+	</body>
+</html>
