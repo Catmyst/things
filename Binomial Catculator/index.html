@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<head>
+    <title> Binomial Catculator</title>
+    <!-- by catmyst :D -->
+</head>
+<body>
+    <h1>Binomial Distribution Calculator</h1>
+    <div> Chance for a Single Success(in decimal): 
+    <input id="chance" type="number" required/>
+    </div>
+    <div> Amount of trial(s): 
+    <input id="trial" type="number" required/>
+    </div>
+    <div> Amount of Success(es): 
+    <input id="success"type="number" required/>
+    </div>
+    
+    <div> Chance of having exactly <span class="sucAmt">0</span> Success(es) in <span class="trialAmt">0</span> trial(s) is 
+    <span id="exactAns">0</span> or
+    <span id="exactAns%">0</span>
+    </div>
+    <div>Chance of having more or exactly <span class="sucAmt">0</span> Success(es) in <span class="trialAmt">0</span> trial(s) is 
+        <span id="exactmoreAns">0</span> or
+        <span id="exactmoreAns%">0</span>
+    </div>
+    <div> Chance of having more than <span class="sucAmt">0</span> Success(es) in <span class="trialAmt">0</span> trial(s) is 
+    <span id="moreAns">0</span> or
+    <span id="moreAns%">0</span>
+    </div>
+    <div>Chance of having less or exactly <span class="sucAmt">0</span> Success(es) in <span class="trialAmt">0</span> trial(s) is 
+        <span id="exactlessAns">0</span> or
+        <span id="exactlessAns%" placeholder=>0</span>
+    </div>
+    <div> Chance of having less than <span class="sucAmt">0</span> Success(es) in <span class="trialAmt">0</span> trial(s) is 
+    <span id="lessAns">0</span> or
+    <span id="lessAns%">0</span>
+    </div>
+    <h1 id="popup"></h1>
+    <p id="warning"></p>
+    <button onclick="calculate()">calculate</button>
+    <script>
+        function calculate(){
+        
+        //variables
+           const chance = parseFloat(document.getElementById("chance").value)
+           const trial = parseInt(document.getElementById("trial").value)
+           const success = parseInt(document.getElementById("success").value)
+           let popup = document.getElementById("popup")
+           let warning = document.getElementById("warning")
+           let trialamt = document.getElementsByClassName("trialAmt")
+           let sucamt = document.getElementsByClassName("sucAmt")
+           let exactans = document.getElementById("exactAns")
+           let exactansper = document.getElementById("exactAns%")
+           let moreans = document.getElementById("moreAns")
+           let moreansper = document.getElementById("moreAns%")
+           let lessans = document.getElementById("lessAns")
+           let lessansper = document.getElementById("lessAns%")
+           let exactmoreans = document.getElementById("exactmoreAns")
+           let exactmoreansper = document.getElementById("exactmoreAns%")
+           let exactlessans = document.getElementById("exactlessAns")
+           let exactlessansper = document.getElementById("exactlessAns%")
+           const neg = trial - success
+            console.log(chance)
+        if(chance < 1 && chance > 0 && trial > 0 && success > 0 && trial >= success){
+        popup.innerHTML = ' '
+        warning.innerHTML = ' '
+        //get combination
+        let trialfac = factorial(trial) 
+        let successfac = factorial(success)
+        let negfac = factorial(neg)
+        function factorial(n){
+        let result = 1
+        for (let i=1; i<=n; i++){
+            result = result * i
+        }
+            return result
+        }
+        let bottom = successfac * negfac
+        let combination = trialfac/bottom
+        //get binomial probability
+        let win = Math.pow(chance, success)
+        let lose = Math.pow(1-chance, neg)
+        exactans.innerHTML = parseFloat(combination * win * lose).toFixed(4)
+        exactansper.innerHTML = exactans.innerHTML * 100 + "%"
+        //get "having more or exactly" probability
+        exactmoreans.innerHTML = parseFloat(cumfunc(success)).toFixed(4)
+        exactmoreansper.innerHTML = exactmoreans.innerHTML * 100 + "%"
+        function cumfunc(n){
+            let result = 0;
+            for (let n = success; n<=trial; n++){
+            let sucfac = factorial(n)
+            let nega = trial - n
+            let negafac = factorial(nega)
+            let bot = sucfac * negafac
+            let combination = trialfac/bot
+            let won = Math.pow(chance, n)
+            let loss = Math.pow(1-chance, nega)
+            let total = combination * won * loss
+            result = eval(parseFloat(result) + parseFloat(total))
+        }
+        return result;
+    }
+        //get other probabilities
+        moreans.innerHTML = parseFloat(exactmoreans.innerHTML - exactans.innerHTML).toFixed(4)
+        moreansper.innerHTML = moreans.innerHTML * 100 +"%"
+        lessans.innerHTML = parseFloat(1 - exactmoreans.innerHTML).toFixed(4)
+        lessansper.innerHTML = lessans.innerHTML * 100 +"%"
+        exactlessans.innerHTML = parseFloat(1 - moreans.innerHTML).toFixed(4)
+        exactlessansper.innerHTML = exactlessans.innerHTML * 100 +"%"
+        // success and trial span changer
+        for (let i=0;i<trialamt.length;i++){
+            trialamt[i].innerHTML = trial
+        }
+        for (let i=0;i<sucamt.length;i++){
+            sucamt[i].innerHTML = success
+        }
+        }
+        else{
+            popup.innerHTML = "Please input correctly :D"
+            warning.innerHTML = "numbers cant be negative, chance must be between 0 and 1 (exclusive), amount of trial must be higher than success with decimal being rounded down."
+        }
+        }
+    </script>
+</body>
