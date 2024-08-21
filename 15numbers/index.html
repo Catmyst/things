@@ -1,0 +1,150 @@
+<head>
+<title>15 numbers game by catmyst :D</title>
+</head>
+    <style>
+        body{
+            position: relative;
+            background-color: black;
+        }
+        #spine {
+            background-color: #212529;
+            border: 2px solid #343a40;
+        height:80vh;
+        width:80vh;
+        margin: calc(10vh - 10vw) auto 5vh auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1%;
+  padding: 20px 10px;
+}
+#x, #y{
+    background-color: #7f5539;
+    border: 2px solid #fad643;
+    color:white;
+    text-align: center;
+    font-size: 5vw;
+    margin-top: 0;
+    width:5vw;
+    position:relative;
+    z-index:4;
+    top: -93.5vh;
+    left:calc(24vw - 2.4vh);
+}
+#y{
+    top: 5vh;
+    left: 90vw;
+}
+        .numbers, .empty{
+            background-color: #212529;
+            border: 2px solid #343a40;
+            color: red;
+            align-content: flex-start;
+            text-align: center;
+            height:24%;
+            width: 24%;
+            font-size:16vh;
+            box-sizing: border-box;
+        }
+        .empty{
+            font-size: 5vh;
+            border:none;
+        }
+    </style>
+    <body>
+    <div id="gamespace">
+        <div id="y"onclick="openpuzzle()">y</div>
+    </div>
+        <script>
+            let finish = false
+            function closepuzzle(){
+                document.getElementById("spine").remove()
+                document.getElementById("x").remove()
+            }
+            function openpuzzle(){
+                const gamespace= document.getElementById('gamespace')
+                let spine= document.createElement('div')
+                spine.id='spine'
+                gamespace.appendChild(spine)
+                let x= document.createElement('div')
+                x.id='x'
+                x.onclick= closepuzzle
+                x.textContent='X'
+                gamespace.appendChild(x)
+                let numbersarray=[]
+                for(let i = 1; i<=15; i++){
+                    let numbers = "number" + i.toString() 
+                    numbers = document.createElement('div')
+                    numbers.classList= 'numbers'
+                    numbers.onclick= function(){
+                        shift(i)}
+                    numbers.id= i
+                    numbers.textContent= i
+                    numbersarray.push(numbers)
+                }
+                
+                let correctorder;
+                let empty = document.createElement('div')
+                empty.id='empty'
+                empty.className='empty'
+                if(finish == false){
+                    correctorder= [3, 0, 12, 6, 10, 8, 9, 1, 11, 5, 13, 14, 2, 4, 7]
+                }
+                else if(finish == true){
+                correctorder= [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14]
+                empty.textContent='gg you win'
+                }
+                for(let i=0; i<15; i++){
+                    spine.appendChild(numbersarray[correctorder[i]])
+                }
+                spine.appendChild(empty)
+            }
+            function shift(n){
+                if (!finish){
+                let space = document.getElementById("empty")
+                let number = document.getElementById(n)
+                let numbers = document.getElementsByClassName("numbers")
+                let empty = document.getElementById("empty")
+                let spine = number.parentNode
+                let emptyindex = Array.prototype.indexOf.call(spine.children, empty);
+                let numberindex = Array.prototype.indexOf.call(spine.children, number);
+                let range = Math.abs(emptyindex - numberindex)
+                if(range === 1){
+                if(emptyindex > numberindex){
+                    spine.insertBefore(space,number)
+                    }
+                else if(numberindex > emptyindex){
+                    spine.insertBefore(number,space)
+                    }
+                }
+                else if (range === 4){
+                    let beforenum = numbers[numberindex]
+                    let beforespace = numbers[emptyindex -1]
+                        spine.insertBefore(space, beforenum)
+                        spine.insertBefore(number, beforespace.nextSibling)                 
+                }
+                else {
+                    console.log("invalid move\n", "empty index:",emptyindex, "number index:", numberindex, "range:",range)
+                }
+                    let spinediv = document.getElementById("spine")
+                    let spinechild = Array.from(spinediv.children)
+                    let correctarray = []
+                    for (let i=1; i<= 15; i++){
+                        correctarray.push(document.getElementById(i.toString()))
+                    }
+                    correctarray.push(document.getElementById("empty"))
+                    if(spinechild.every((element, index) => element === correctarray[index])){
+                        empty.innerHTML= "gg you win"
+                        finish = true
+                        console.log("1")
+                    }
+        }
+        else if(finish){
+            console.log("puzzle is done!")
+        }
+    }
+        
+        </script>
+    </body>
