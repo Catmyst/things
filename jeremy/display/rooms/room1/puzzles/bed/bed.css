@@ -1,0 +1,9 @@
+/* room 1 bed*/
+#bedinput{
+    position:relative;
+    z-index: 1;
+    top: 50vh;
+    left: 78vw;
+    height: 20vh;
+    width: 22vw;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!-- change 15num.js correctorder, change bed.js settimeout-->
+<head>
+    <meta charset="UTF-8">
+    <title>The Evil Among Us</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="transition"></div>
+
+<div id="maintitle">
+    <div id="title">The Evil Among Us</div>
+    <div id="play" onclick="skipintro()">Play</div>
+    <div id="credit" onclick="showcredit()">Credits</div>
+    <div id="creditxspace"></div>
+    <div id="creditspace"></div>
+</div>
+<!--maintitle and intro-->
+<script src="display/maintitle/maintitle.js"></script>
+<script src="display/intro/intro.js"></script>
+<!--inventory items-->
+<script src="display/inventory/diary/diary.js"></script>
+<!-- room 1 things -->
+<script src="display/rooms/room1/puzzles/bed/bed.js"></script>
+<script src="display/rooms/room1/puzzles/15num/15num.js"></script>
+<!-- main js, mostly templates-->
+<script src="script.js"> </script>
+<script src="misc.js"></script>
+</body>

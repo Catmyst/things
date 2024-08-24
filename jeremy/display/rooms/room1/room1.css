@@ -1,0 +1,15 @@
+/*room 1*/
+#room1{
+    filter:'';
+    position: relative;
+    z-index: 0;
+    background-size: 100% 100%; 
+    height: 100vh;
+    width: 100vw;
+    background-position: center;
+    background-repeat: no-repeat; 
+    overflow: hidden; 
+    margin:  0; 
+    padding: 0; 
+    background-image: url(bedroom.png);
+}

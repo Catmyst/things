@@ -1,0 +1,32 @@
+/*puzzle template*/
+#puzzlespace {
+    position: absolute;
+    z-index: 1;
+    background-color: #212529;
+    border: 2px solid #343a40;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height:80vh;
+    width:80vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1%;
+    padding: 20px 10px;
+}
+
+#x{
+    background-color: #212529;
+    border: 2px solid #343a40;
+    color:white;
+    text-align: center;
+    font-size: 2vw;
+    margin-top: 0;
+    position:absolute;
+    z-index:1;
+    top: 1vh;
+    left:1vw;
+}

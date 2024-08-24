@@ -1,0 +1,30 @@
+/*inventory interface*/
+#inventory{
+    position: absolute;
+    z-index: 1;
+    background-color: #212529;
+    border: 2px solid #343a40;
+    top: 95vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height:4vw;
+    width:81vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1%;
+}
+.slots{
+    position:relative;
+    z-index: 1;
+    background-color: #212529;
+    border: 2px solid #343a40;
+    color: red;
+    align-content: flex-start;
+    text-align: center;
+    height:4vw;
+    width: 4vw;
+    box-sizing: border-box;
+}

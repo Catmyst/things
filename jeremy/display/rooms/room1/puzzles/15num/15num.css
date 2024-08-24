@@ -1,0 +1,26 @@
+/*room 1 puzzle box*/
+#puzzleboxinput{
+    position:relative;
+    z-index: 1;
+    top: 35vh;
+    left: 74vw;
+    height: 9vh;
+    width: 4.5vw;
+}
+.numbers, .empty{
+    position:relative;
+    z-index: 1;
+    background-color: #212529;
+    border: 2px solid #343a40;
+    color: red;
+    align-content: flex-start;
+    text-align: center;
+    height:24%;
+    width: 24%;
+    font-size:16vh;
+    box-sizing: border-box;
+}
+.empty{
+    font-size: 5vh;
+    border:none;
+}
