@@ -80,13 +80,21 @@ function testmatch(){
         clockfinish=true
         closeclock()
         transtimer = setInterval(transition,10)
-        document.getElementById('transition').innerHTML = "word"
         let inv = document.getElementById('inventory')
         inv.style.zIndex = -1
+        if(document.getElementById('diary')){document.getElementById('transition').innerHTML = '<span>After some thought and recalling the diary\'s instructions, you carefully adjust the clock to midnight. The clock chimes loudly. <span style="color:red">The clock drops a key for your effort.</span></span>'}
+        else{document.getElementById('transition').innerHTML= '<span>Despite the odds, without knowing what to do, you somehow managed to complete the clock puzzle with odds of 1 in 1440. Well, there goes your luck for the year. <span style="color:red">The clock drops a key for your effort, lucky dog.</span></span>'}
         setTimeout(function(){
+        let slot2 = document.getElementById('slot2')
+        let img = document.createElement('img')
+        img.src='display/inventory/key/key.png'
+        img.id='key'
+        img.className="items"
+        img.onclick= function(){hold(key)}
+        slot2.appendChild(img)
         transtimer = setInterval(transition2,10)
         inv.style.zIndex = 1
-       },1010)//8000
+       },8000)//8000
     }
 }
 function adjust(type){

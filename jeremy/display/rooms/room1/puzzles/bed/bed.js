@@ -12,9 +12,10 @@ setTimeout(function(){
     let img = document.createElement('img')
     img.src='display/inventory/diary/diary.png'
     img.id='diary'
+    img.className="items"
     img.onclick= function(){opendiary()}
     slot1.appendChild(img)
     inv.style.zIndex = 1
     document.getElementById('bedinput').onclick=''
-}, 1010)//8000
+}, 2000)//8000
 }

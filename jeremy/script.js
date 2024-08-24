@@ -89,5 +89,11 @@ function roompuzzles(num){
         break;
     }
 }
-    
+function hold(item){
+    switch(item){
+        case key:
+        console.log("1")
+        break
+    }
+}
 

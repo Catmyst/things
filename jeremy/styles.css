@@ -39,3 +39,7 @@ body{
     background-color: black;
     opacity: 0;
 }
+.items{
+    height:100%;
+    width:100%;
+}
