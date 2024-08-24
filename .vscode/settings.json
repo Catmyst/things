@@ -1,0 +1,9 @@
+{
+    "files.exclude": {
+        "**/15numbers": true,
+        "**/Bin_Catculator": true,
+        "**/Catculator": true,
+        "**/goofy_bird": true,
+        "**/quickHands": true
+    }
+}
