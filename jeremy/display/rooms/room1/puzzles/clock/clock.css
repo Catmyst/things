@@ -1,0 +1,74 @@
+/*room 1 clock*/
+#mainclock{
+    position:relative;
+    top: 10vh;
+    left:5vh;
+    height:80vh;
+    display:flex; 
+    flex-direction:row; 
+    text-align:center
+}
+#increasehour, #reducehour, #increaseminute, #reduceminute{
+    position: relative;
+    left: 5vh;
+    top: -1vh;
+}
+#reducehour, #reduceminute{
+    top:1vh;
+}
+#adjust{
+    position:relative;
+    top:50vh;
+    left:-55vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:red;
+    font-size:10vh;
+    height:10vh;
+    width:40vh;
+    background-color: #212529;
+    border: 2px solid #343a40;
+}
+#clockinput{
+    position:relative;
+    z-index: 1;
+    top: -10vh;
+    left: 10vw;
+    height: 60vh;
+    width: 10vw;
+}
+#seperator{
+    color: red;
+    position: relative;
+    top: -12.5vh;
+    font-size:40vh;
+    text-align: center;
+}
+.adjustup{
+    width: 0;
+    height: 0;
+    border-left: 10vh solid transparent;
+    border-right: 10vh solid transparent;
+    border-bottom: 5vh solid red;
+    border-top: 0 solid transparent;
+}
+.adjustdown{
+    width: 0;
+    height: 0;
+    border-left: 10vh solid transparent;
+    border-right: 10vh solid transparent;
+    border-top: 5vh solid red;
+}
+
+.time{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:red;
+    font-size: 30vh;
+    height:30vh;
+    width:30vh;
+    background-color: #212529;
+    border: 2px solid #343a40;
+}

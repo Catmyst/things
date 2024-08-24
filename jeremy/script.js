@@ -24,9 +24,10 @@ function puzzletemplate(type){
     const closepuzzlesfunctions = {
         puzzlebox: closepuzzlebox,
         diary: closediary,
+        clock: closeclock,
     }
     console.log('close' + type)
-let bg = document.getElementById('room1')
+    let bg = document.getElementById('room1')
     bg.style.filter= 'blur(3px)'
     let oldspace = document.getElementById('puzzlespace')
     let close = document.getElementById('x')
@@ -47,6 +48,12 @@ let bg = document.getElementById('room1')
     x.onclick= closepuzzlesfunctions[type]
     x.textContent='Close ' + type
     gamespace.appendChild(x)
+}
+function closepuzzle(){
+    let bg = document.getElementById('room1')
+    bg.style.filter= ''
+    let inv = document.getElementById('inventory')
+    inv.style.zIndex = 1
 }
 //ready room
 function room(num){
@@ -75,6 +82,11 @@ function roompuzzles(num){
         bedinput.id ='bedinput'
         bedinput.onclick= openbed
         room1.appendChild(bedinput)
+        let clockinput = document.createElement('div')
+        clockinput.id="clockinput"
+        clockinput.onclick= openclock
+        room1.appendChild(clockinput)
+        break;
     }
 }
     

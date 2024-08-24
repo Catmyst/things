@@ -31,14 +31,11 @@ function openpuzzlebox(){
     puzzlespace.appendChild(empty)
 }
 function closepuzzlebox(){
-    let bg = document.getElementById('room1')
-    bg.style.filter= ''
-    let inv = document.getElementById('inventory')
-    inv.style.zIndex = 1
+    closepuzzle()
     let input = document.getElementById('puzzleboxinput')
     input.onclick=openpuzzlebox
     document.getElementById("puzzlespace").remove()
-                document.getElementById("x").remove()
+    document.getElementById("x").remove()
 }
 
 function shift(n){
