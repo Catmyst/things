@@ -4,6 +4,7 @@
         "**/Bin_Catculator": true,
         "**/Catculator": true,
         "**/goofy_bird": true,
-        "**/quickHands": true
+        "**/quickHands": true,
+        "**/.vscode": true
     }
 }
