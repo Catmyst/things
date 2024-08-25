@@ -16,6 +16,7 @@ for(let i=1; i<18; i++){
     slots = document.createElement('div')
     slots.id = slotid
     slots.className = 'slots'
+    slots.style.borderColor='#343a40'
     inv.appendChild(slots)
 }
 } 
@@ -86,14 +87,10 @@ function roompuzzles(num){
         clockinput.id="clockinput"
         clockinput.onclick= openclock
         room1.appendChild(clockinput)
+        let mirrorinput = document.createElement('div')
+        mirrorinput.id="mirrorinput"
+        mirrorinput.onclick= openmirror
+        room1.appendChild(mirrorinput)
         break;
     }
 }
-function hold(item){
-    switch(item){
-        case key:
-        console.log("1")
-        break
-    }
-}
-
