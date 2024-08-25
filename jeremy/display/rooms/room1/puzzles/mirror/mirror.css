@@ -1,6 +1,5 @@
 /*room 1 mirror*/
 #mirrorinput{
-    background-color: white;
     position:relative;
     z-index: 1;
     top: -50vh;

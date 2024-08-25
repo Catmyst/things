@@ -3,8 +3,8 @@ function skipintro(){
     document.getElementById("maintitle").remove();
     ui()
     room(1)
-    slot2()
-    slot3()
+    //slot2()
+    //slot3()
     function slot2(){
         let slot2 = document.getElementById('slot2')
         let img = document.createElement('img')

@@ -92,7 +92,7 @@ function testmatch(){
         img.src='display/inventory/key/key.png'
         img.id='key'
         img.className="items"
-        img.onclick= function(){hold(key)}
+        img.onclick= function(){hold("key")}
         slot2.appendChild(img)
         transtimer = setInterval(transition2,10)
         inv.style.zIndex = 1

@@ -3,7 +3,7 @@ let holdingitem= '';
 function hold(item){
     let slotelements = document.getElementsByClassName('slots')
     switch(item){
-        case key:
+        case "key":
             if(holdingitem !='key'){
                 for(let i=0; i<17; i++){
                     slotelements[i].style.borderColor='#343a40'
@@ -18,7 +18,7 @@ function hold(item){
                 console.log("you are no longer holding an item")
             }
             break;
-        case fire:
+        case "fire":
             if(holdingitem !='fire'){
                 for(let i=0; i<17; i++){
                         slotelements[i].style.borderColor='#343a40'
