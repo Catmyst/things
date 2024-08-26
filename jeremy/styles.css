@@ -11,6 +11,7 @@
 
 /*room 1 & puzzles*/
 @import url(display/rooms/room1/room1.css);
+@import url(display/rooms/room1/puzzles/wardrobe/wardrobe.css);
 @import url(display/rooms/room1/puzzles/mirror/mirror.css);
 @import url(display/rooms/room1/puzzles/15num/15num.css);
 @import url(display/rooms/room1/puzzles/bed/bed.css);

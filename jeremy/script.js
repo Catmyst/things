@@ -23,6 +23,7 @@ for(let i=1; i<18; i++){
 //puzzle template
 function puzzletemplate(type){
     const closepuzzlesfunctions = {
+        wardrobe: closewardrobe,
         puzzlebox: closepuzzlebox,
         diary: closediary,
         clock: closeclock,
@@ -55,6 +56,8 @@ function closepuzzle(){
     bg.style.filter= ''
     let inv = document.getElementById('inventory')
     inv.style.zIndex = 1
+    document.getElementById("puzzlespace").remove()
+    document.getElementById("x").remove()
 }
 //ready room
 function room(num){
@@ -91,6 +94,10 @@ function roompuzzles(num){
         mirrorinput.id="mirrorinput"
         mirrorinput.onclick= openmirror
         room1.appendChild(mirrorinput)
+        let wardrobeinput = document.createElement('div')
+        wardrobeinput.id="wardrobeinput"
+        wardrobeinput.onclick= openwardrobe
+        room1.appendChild(wardrobeinput)
         break;
     }
 }

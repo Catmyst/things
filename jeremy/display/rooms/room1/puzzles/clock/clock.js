@@ -66,10 +66,8 @@ function finishedclock(){
 }
 function closeclock(){
     closepuzzle()
-    let input = document.getElementById('puzzleboxinput')
-    input.onclick=openpuzzlebox
-    document.getElementById("puzzlespace").remove()
-    document.getElementById("x").remove()
+    let input = document.getElementById('clockinput')
+    input.onclick=openclock
     clearInterval(clocktimer)
 }
 function testmatch(){

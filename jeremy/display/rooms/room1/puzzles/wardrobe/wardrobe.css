@@ -1,0 +1,75 @@
+/*room 1 wardrobe*/
+#wardrobeinput{
+    opacity: 0.5;
+    position:relative;
+    z-index: 1;
+    top: -90vh;
+    left: 52.5vw;
+    height: 52vh;
+    width: 17vw;
+}
+#chest{
+    position: relative;
+    top: 0vh;
+    width: 80vh;
+    height: 46.67vh;
+}
+.huh{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1vh;
+}
+.uparrow{
+    position:relative;
+    z-index: 2;
+    top:29vh;
+    left: 16vh;
+    margin-left: 3vh;
+    width: 0;
+    height: 0;
+    border-left: 4vh solid transparent;
+    border-right: 4vh solid transparent;
+    border-bottom: 2vh solid red;
+    border-top: 0 solid transparent;
+}
+#numbercontainer{
+    font-size:5vw;
+    display:flex;
+    flex-direction: row;
+    position: relative;
+    top: -23.5vh;
+    left: 16.7vh;
+}
+.number{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-left:1.5vh;
+    flex-direction: row;
+    z-index: 2;
+    background-color: black;
+    color:red;
+    height:10vh;
+    width:10vh;
+}
+.downarrow{
+    position: relative;
+    z-index: 2;
+    top:-9vh;
+    left: 16vh;
+    margin-left: 3vh;
+    width: 0;
+    height: 0;
+    border-left: 4vh solid transparent;
+    border-right: 4vh solid transparent;
+    border-top: 2vh solid red;
+}
+#check{
+    width: 80vh;
+    text-align: center;
+    background-color: #212529;
+    border: 2px solid #343a40;
+    color:red;
+    font-size: 5vw;
+
+}

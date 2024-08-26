@@ -34,8 +34,6 @@ function closepuzzlebox(){
     closepuzzle()
     let input = document.getElementById('puzzleboxinput')
     input.onclick=openpuzzlebox
-    document.getElementById("puzzlespace").remove()
-    document.getElementById("x").remove()
 }
 
 function shift(n){

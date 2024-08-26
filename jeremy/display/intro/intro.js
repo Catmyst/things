@@ -1,17 +1,17 @@
 //intro
-function skipintro(){
+function devtool(){
     document.getElementById("maintitle").remove();
     ui()
     room(1)
-    //slot2()
-    //slot3()
+    slot2()
+    slot3()
     function slot2(){
         let slot2 = document.getElementById('slot2')
         let img = document.createElement('img')
         img.src='display/inventory/key/key.png'
         img.id='key'
         img.className="items"
-        img.onclick= function(){hold(key)}
+        img.onclick= function(){hold('key')}
         slot2.appendChild(img)
     }
     function slot3(){
@@ -20,7 +20,7 @@ function skipintro(){
         img.src='display/inventory/fire/fire.png'
         img.id='fire'
         img.className="items"
-        img.onclick= function(){hold(fire)}
+        img.onclick= function(){hold('fire')}
         slot3.appendChild(img)
     }
 }
