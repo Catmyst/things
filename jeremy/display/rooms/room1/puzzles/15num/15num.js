@@ -1,5 +1,5 @@
 //room1 puzzle box
-let finish = false;
+let finishpuzzlebox = false;
 function openpuzzlebox(){
     puzzletemplate('puzzlebox')
     let numbersarray=[]
@@ -17,11 +17,11 @@ function openpuzzlebox(){
     let empty = document.createElement('div')
     empty.id='empty'
     empty.className='empty'
-    if(finish == false){
+    if(finishpuzzlebox == false){
         //correctorder= [3, 0, 12, 6, 10, 8, 9, 1, 11, 5, 13, 14, 2, 4, 7]
         correctorder= [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14] 
     }
-    else if(finish == true){
+    else if(finishpuzzlebox == true){
     correctorder= [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14]
     empty.textContent='the chest lock is \"1234\"'
     }
@@ -37,7 +37,7 @@ function closepuzzlebox(){
 }
 
 function shift(n){
-    if (!finish){
+    if (!finishpuzzlebox){
     let space = document.getElementById("empty")
     let number = document.getElementById(n)
     let numbers = document.getElementsByClassName("numbers")
@@ -71,12 +71,12 @@ function shift(n){
         }
         correctarray.push(document.getElementById("empty"))
         if(puzzlespacechild.every((element, index) => element === correctarray[index])){
-            empty.innerHTML= "the chest lock is \"1234\" "
-            finish = true
+            empty.innerHTML= "the chest lock is \"8008\" "
+            finishpuzzlebox = true
             console.log("1")
         }
 }
-else if(finish){
+else if(finishpuzzlebox){
 console.log("puzzle is done!")
 }
 
