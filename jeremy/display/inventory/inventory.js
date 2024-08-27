@@ -19,7 +19,15 @@ function hold(item){
             }
             break;
         case "fire":
-            if(holdingitem !='fire'){
+            if(holdingitem == 'unlitcandle'){
+                document.getElementById('slot4').style.borderColor='#343a40'
+                document.getElementById('fire').remove()
+                document.getElementById('slot4').innerHTML =`<img src="display/inventory/candle/litcandle.png" id="litcandle" class="items">`
+                document.getElementById('litcandle').onclick="function(){hold('litcandle')}"
+                holdingitem=''
+                console.log("you combined the fire with an unlit candle, creating a lit candle")
+            }
+            else if(holdingitem !='fire'){
                 for(let i=0; i<17; i++){
                         slotelements[i].style.borderColor='#343a40'
             }
@@ -30,6 +38,44 @@ function hold(item){
             }
             else if(holdingitem == 'fire'){
                 document.getElementById('slot3').style.borderColor='#343a40'
+                holdingitem=''
+                console.log("you are no longer holding an item")
+            }
+            break;
+        case "unlitcandle":
+        if(holdingitem == 'fire'){
+                document.getElementById('slot3').style.borderColor='#343a40'
+                document.getElementById('fire').remove()
+                document.getElementById('slot4').innerHTML =`<img src="display/inventory/candle/litcandle.png" id="litcandle" class="items">`
+                document.getElementById('litcandle').onclick=function(){hold('litcandle')}
+                holdingitem=''
+                console.log("you combined the fire with an unlit candle, creating a lit candle")
+            }
+        else if(holdingitem !='unlitcandle'){
+            for(let i=0; i<17; i++){
+                slotelements[i].style.borderColor='#343a40'
+        }   
+            slotelements[3].style.borderColor='white'
+            console.log("you are now holding the unlit candle")
+            holdingitem = 'unlitcandle'
+        }
+        else if(holdingitem=='unlitcandle'){
+            document.getElementById('slot4').style.borderColor='#343a40'
+            holdingitem=''
+            console.log("you are no longer holding an item")
+        }
+        break;
+        case 'litcandle':
+            if(holdingitem !='litcandle'){
+                for(let i=0; i<17; i++){
+                    slotelements[i].style.borderColor='#343a40'
+            }   
+                slotelements[3].style.borderColor='white'
+                console.log("you are now holding the lit candle")
+                holdingitem = 'litcandle'
+            }
+            else if(holdingitem=='litcandle'){
+                document.getElementById('slot4').style.borderColor='#343a40'
                 holdingitem=''
                 console.log("you are no longer holding an item")
             }

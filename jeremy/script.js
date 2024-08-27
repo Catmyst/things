@@ -69,10 +69,10 @@ function room(num){
     }
     let gamespace = document.getElementById('gamespace')
     let roomnum = 'room' + num.toString()
-    roomnum = document.createElement('div')
-    roomnum.id = "room1"
-    roomnum.className ='room'
-    gamespace.appendChild(roomnum)
+    roomnew= document.createElement('div')
+    roomnew.id = roomnum
+    roomnew.className ='room'
+    gamespace.appendChild(roomnew)
     roompuzzles(num)
 }
 function roompuzzles(num){
@@ -98,6 +98,10 @@ function roompuzzles(num){
         wardrobeinput.id="wardrobeinput"
         wardrobeinput.onclick= openwardrobe
         room1.appendChild(wardrobeinput)
+        let bathroominput = document.createElement('div')
+        bathroominput.id="bathroominput"
+        bathroominput.onclick= function(){room2eligibility()}
+        room1.appendChild(bathroominput)
         break;
     }
 }

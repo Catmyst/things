@@ -10,7 +10,5 @@ function opendiary(){
 function closediary(){
     closepuzzle()
     let input = document.getElementById('diary')
-    input.onclick=opendiary
-    document.getElementById("puzzlespace").remove()
-    document.getElementById("x").remove()
+    input.onclick= opendiary
 }

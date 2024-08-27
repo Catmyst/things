@@ -20,7 +20,7 @@ function openmirror(){
                 slot3.appendChild(img)
                 inv.style.zIndex = 1
                 document.getElementById('mirrorinput').onclick=''
-            },1100)//3000 must atleast 1100
-        },0)//3000
-    },0)//5000
+            },3000)//3000 must atleast 1100
+        },3000)//3000
+    },5000)//5000
 }

@@ -14,7 +14,7 @@
     margin:  0; 
     font-size: 5vw;
     text-align: center;
-    color:red;
+    color:white;
     text-shadow: -3px -3px 0 black, 3px -3px 0 black,  -3px 3px 0 black, 3px 3px 0 black;
     height: 100vh;
     display:grid;

@@ -2,6 +2,7 @@
 @import url(https://fonts.googleapis.com/css2?family=Creepster&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Special+Elite&display=swap);
 /*displays*/
+@import url(display/rooms/roomtemplate.css);
 @import url(display/maintitle/maintitle.css);
 @import url(display/intro/intro.css);
 @import url(display/puzzletemplate/puzzletemplate.css);
@@ -9,8 +10,8 @@
 @import url(display/inventory/inventory.css);
 @import url(display/inventory/diary/diary.css);
 
-/*room 1 & puzzles*/
-@import url(display/rooms/room1/room1.css);
+/*room 1 puzzles*/
+@import url(display/rooms/room1/room2eligibility.css);
 @import url(display/rooms/room1/puzzles/wardrobe/wardrobe.css);
 @import url(display/rooms/room1/puzzles/mirror/mirror.css);
 @import url(display/rooms/room1/puzzles/15num/15num.css);

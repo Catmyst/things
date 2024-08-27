@@ -18,12 +18,12 @@ function openpuzzlebox(){
     empty.id='empty'
     empty.className='empty'
     if(finishpuzzlebox == false){
-        //correctorder= [3, 0, 12, 6, 10, 8, 9, 1, 11, 5, 13, 14, 2, 4, 7]
-        correctorder= [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14] 
+        correctorder= [3, 0, 12, 6, 10, 8, 9, 1, 11, 5, 13, 14, 2, 4, 7]
+        //correctorder= [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14] 
     }
     else if(finishpuzzlebox == true){
     correctorder= [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14]
-    empty.textContent='the chest lock is \"1234\"'
+    empty.textContent='the chest lock is \"8008\"'
     }
     for(let i=0; i<15; i++){
         puzzlespace.appendChild(numbersarray[correctorder[i]])

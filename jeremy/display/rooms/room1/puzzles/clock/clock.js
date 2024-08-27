@@ -27,14 +27,12 @@ function openclock(){
         clocktimer= setInterval(finishedclock,16)//16
     } 
     else{
-        document.getElementById('hour').innerHTML = 23
-        document.getElementById('minute').innerHTML = 58
-    /*if (inithour <=9){
+    if (inithour <=9){
         document.getElementById('hour').innerHTML = "0" + inithour 
     }else{document.getElementById('hour').innerHTML = inithour}
     if (initminute <9){
         document.getElementById('minute').innerHTML = "0" + initminute 
-    }else{document.getElementById('minute').innerHTML = initminute}*/
+    }else{document.getElementById('minute').innerHTML = initminute}
     clocktimer= setInterval(clocktick,1000)//1000
 }
 }
@@ -94,7 +92,7 @@ function testmatch(){
         slot2.appendChild(img)
         transtimer = setInterval(transition2,10)
         inv.style.zIndex = 1
-       },1100)//8000
+       },8000)//8000
     }
 }
 function adjust(type){

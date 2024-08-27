@@ -1,5 +1,5 @@
 /*room 1*/
-#room1{
+.room{
     filter:'';
     position: relative;
     z-index: 0;
@@ -11,5 +11,7 @@
     overflow: hidden; 
     margin:  0; 
     padding: 0; 
-    background-image: url(bedroom.png);
+}
+#room1{
+    background-image: url(room1/bedroom.png);
 }

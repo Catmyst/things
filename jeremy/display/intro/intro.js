@@ -3,8 +3,19 @@ function devtool(){
     document.getElementById("maintitle").remove();
     ui()
     room(1)
+    slot1()
     slot2()
     slot3()
+    slot4()
+    function slot1(){
+        let slot1 = document.getElementById('slot1')
+        let img = document.createElement('img')
+        img.src='display/inventory/diary/diary.png'
+        img.id='diary'
+        img.className="items"
+        img.onclick= function(){opendiary()}
+        slot1.appendChild(img)
+    }
     function slot2(){
         let slot2 = document.getElementById('slot2')
         let img = document.createElement('img')
@@ -22,6 +33,15 @@ function devtool(){
         img.className="items"
         img.onclick= function(){hold('fire')}
         slot3.appendChild(img)
+    }
+    function slot4(){
+        let slot4 = document.getElementById('slot4')
+        let img = document.createElement('img')
+        img.src='display/inventory/candle/unlitcandle.png'
+        img.id='unlitcandle'
+        img.className="items"
+        img.onclick= function(){hold('unlitcandle')}
+        slot4.appendChild(img)
     }
 }
 function playintro(){
@@ -46,7 +66,7 @@ function playintro(){
     setTimeout(function(){
         transtimer = setInterval(transition2, 10)
         let intro = document.getElementById("intro")
-            intro.innerHTML = "Little did I know, as the clock struck midnight, the temperature dropped, and a chilling breeze swept through an eerie silence fell over the room, suddenly shifting Me to a whole nother different room entirely. If that isn't karma, I don't know what is."
+            intro.innerHTML = "<span style='color:red;'>Little did I know, as the clock struck midnight, the temperature dropped, and a chilling breeze swept through an eerie silence fell over the room, suddenly shifting Me to a whole nother different room entirely. If that isn't karma, I don't know what is.</span>"
             intro.onclick = closeintro
             intro.style.fontSize = "4vw"
             intro.style.backgroundImage = "url(display/intro/intro2.png)"

@@ -14,10 +14,10 @@ function openwardrobe(){
         <div class="downarrow" onclick=adjustpin('m3')></div>
         <div class="downarrow" onclick=adjustpin('m4')></div>
         <div id="numbercontainer">
-        <div class="number" id="num1">8</div>
-        <div class="number" id="num2">0</div>
-        <div class="number" id="num3">0</div>
-        <div class="number" id="num4">8</div>
+        <div class="number" id="num1">6</div>
+        <div class="number" id="num2">9</div>
+        <div class="number" id="num3">6</div>
+        <div class="number" id="num4">9</div>
         </div>
         <div id='check' onclick='check()' style="color:red; font-size: 5vw;">check</div>
     `
@@ -40,7 +40,7 @@ function check(){
         closewardrobe()
         document.getElementById('slot2').style.borderColor='#343a40'
         document.getElementById('key').remove()
-        document.getElementById('wardrobeinput').remove()
+        document.getElementById('wardrobeinput').onclick=''
         if(finishpuzzlebox == true){
         transtimer = setInterval(transition,10)
         let inv = document.getElementById('inventory')
@@ -50,9 +50,9 @@ function check(){
         let slot4 = document.getElementById('slot4')
         let img = document.createElement('img')
         img.src='display/inventory/candle/unlitcandle.png'
-        img.id='candle'
+        img.id='unlitcandle'
         img.className="items"
-        img.onclick= function(){hold("candle")}
+        img.onclick= function(){hold("unlitcandle")}
         slot4.appendChild(img)
         transtimer = setInterval(transition2,10)
         inv.style.zIndex = 1
@@ -68,9 +68,9 @@ function check(){
         let slot4 = document.getElementById('slot4')
         let img = document.createElement('img')
         img.src='display/inventory/candle/unlitcandle.png'
-        img.id='candle'
+        img.id='unlitcandle'
         img.className="items"
-        img.onclick= function(){hold("candle")}
+        img.onclick= function(){hold("unlitcandle")}
         slot4.appendChild(img)
         transtimer = setInterval(transition2,10)
         inv.style.zIndex = 1

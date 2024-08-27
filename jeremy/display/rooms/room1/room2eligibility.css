@@ -1,0 +1,9 @@
+/*room 1 eligibility check for room 2(bathroom)*/
+#bathroominput{
+    position:relative;
+    z-index: 1;
+    top: -130vh;
+    left: 22.5vw;
+    height: 50vh;
+    width: 10vw;
+}
