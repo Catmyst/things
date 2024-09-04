@@ -1,0 +1,9 @@
+/*bedroom input*/
+#bedroominput{
+        position:relative;
+        z-index: 1;
+        top: 10vh;
+        left: 88vw;
+        height: 37vh;
+        width: 12vw;
+}

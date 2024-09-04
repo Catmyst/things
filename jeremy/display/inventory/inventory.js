@@ -23,7 +23,7 @@ function hold(item){
                 document.getElementById('slot4').style.borderColor='#343a40'
                 document.getElementById('fire').remove()
                 document.getElementById('slot4').innerHTML =`<img src="display/inventory/candle/litcandle.png" id="litcandle" class="items">`
-                document.getElementById('litcandle').onclick="function(){hold('litcandle')}"
+                document.getElementById('litcandle').onclick= function(){hold('litcandle')}
                 holdingitem=''
                 console.log("you combined the fire with an unlit candle, creating a lit candle")
             }
@@ -49,7 +49,7 @@ function hold(item){
                 document.getElementById('slot4').innerHTML =`<img src="display/inventory/candle/litcandle.png" id="litcandle" class="items">`
                 document.getElementById('litcandle').onclick=function(){hold('litcandle')}
                 holdingitem=''
-                console.log("you combined the fire with an unlit candle, creating a lit candle")
+                console.log("you combined the unlit canlde with a fire, creating a lit candle")
             }
         else if(holdingitem !='unlitcandle'){
             for(let i=0; i<17; i++){

@@ -59,28 +59,40 @@ function closepuzzle(){
     document.getElementById("puzzlespace").remove()
     document.getElementById("x").remove()
 }
+//room completion bools
+room1complete = false;
 //ready room
 function room(num){
-    let oldroom = document.getElementsByClassName('room')
-    let isexist = oldroom[0]
-    if (isexist){
-        console.log(isexist)
-        isexist.remove()
-    }
-    let gamespace = document.getElementById('gamespace')
-    let roomnum = 'room' + num.toString()
-    roomnew= document.createElement('div')
-    roomnew.id = roomnum
-    roomnew.className ='room'
-    gamespace.appendChild(roomnew)
-    roompuzzles(num)
+        document.getElementById('transition').innerHTML =''
+        transtimer = setInterval(transition, 10)
+        let inv = document.getElementById('inventory')
+        inv.style.zIndex = -1
+        setTimeout(function(){
+            inv.style.zIndex = 1
+            transtimer = setInterval(transition2, 10)
+            let oldroom = document.getElementsByClassName('room')
+            let isexist = oldroom[0]
+            if (isexist){
+                isexist.remove()
+            }
+            let gamespace = document.getElementById('gamespace')
+            let roomnum = 'room' + num.toString()
+            roomnew= document.createElement('div')
+            roomnew.id = roomnum
+            roomnew.className ='room'
+            gamespace.appendChild(roomnew)
+            roompuzzles(num)
+            },1100)
 }
 function roompuzzles(num){
+    console.log(room1complete)
     switch (num){
         case 1: 
+        console.log("wafwe")
+        let room1 = document.getElementById('room1')
         let puzzleboxinput = document.createElement('div')
         puzzleboxinput.id= "puzzleboxinput"
-        puzzleboxinput.onclick = openpuzzlebox
+        puzzleboxinput.onclick = function(){openpuzzlebox()}
         room1.appendChild(puzzleboxinput)
         let bedinput = document.createElement('div')
         bedinput.id ='bedinput'
@@ -102,6 +114,16 @@ function roompuzzles(num){
         bathroominput.id="bathroominput"
         bathroominput.onclick= function(){room2eligibility()}
         room1.appendChild(bathroominput)
+        if(room1complete == true){
+            bedinput.onclick=''
+            mirrorinput.onclick=''
+        }
         break;
+        case 2:
+        let room2 = document.getElementById("room2")
+        let bedroominput = document.createElement('div')
+        bedroominput.id="bedroominput"
+        bedroominput.onclick=function(){room(1)}
+        room2.appendChild(bedroominput)
     }
 }

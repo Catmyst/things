@@ -3,45 +3,41 @@ function devtool(){
     document.getElementById("maintitle").remove();
     ui()
     room(1)
-    slot1()
-    slot2()
-    slot3()
-    slot4()
-    function slot1(){
-        let slot1 = document.getElementById('slot1')
+    unlockallslot()
+}
+function unlockallslot(){
+    let itemslist=[
+        {},
+        {
+            id:'diary',
+            src:'display/inventory/diary/diary.png',
+            onclick: function(){opendiary()}
+        },
+        {
+            id:'key',
+            src:'display/inventory/key/key.png',
+            onclick: function(){hold('key')}
+        },
+        {
+            id:'fire',
+            src:'display/inventory/fire/fire.png',
+            onclick: function(){hold('fire')}
+        },
+        {
+            id:'unlitcandle',
+            src:'display/inventory/candle/unlitcandle.png',
+            onclick: function(){hold("unlitcandle")}
+        },
+    ]
+    for(let i=1;i<=4;i++){
+        let slotnumber = 'slot' + i.toString()
+        let slotdiv = document.getElementById(slotnumber)
         let img = document.createElement('img')
-        img.src='display/inventory/diary/diary.png'
-        img.id='diary'
-        img.className="items"
-        img.onclick= function(){opendiary()}
-        slot1.appendChild(img)
-    }
-    function slot2(){
-        let slot2 = document.getElementById('slot2')
-        let img = document.createElement('img')
-        img.src='display/inventory/key/key.png'
-        img.id='key'
-        img.className="items"
-        img.onclick= function(){hold('key')}
-        slot2.appendChild(img)
-    }
-    function slot3(){
-        let slot3 = document.getElementById('slot3')
-        let img = document.createElement('img')
-        img.src='display/inventory/fire/fire.png'
-        img.id='fire'
-        img.className="items"
-        img.onclick= function(){hold('fire')}
-        slot3.appendChild(img)
-    }
-    function slot4(){
-        let slot4 = document.getElementById('slot4')
-        let img = document.createElement('img')
-        img.src='display/inventory/candle/unlitcandle.png'
-        img.id='unlitcandle'
-        img.className="items"
-        img.onclick= function(){hold('unlitcandle')}
-        slot4.appendChild(img)
+        img.className='items'
+        img.src= itemslist[i].src
+        img.id= itemslist[i].id
+        img.onclick= itemslist[i].onclick
+        slotdiv.appendChild(img)
     }
 }
 function playintro(){
@@ -74,13 +70,10 @@ function playintro(){
             
     }
     function closeintro(){
-        transtimer = setInterval(transition, 10)//remove
-        setTimeout(function(){
-            transtimer = setInterval(transition2, 10)
-            document.getElementById("intro").remove()
+            setTimeout(function(){document.getElementById("intro").remove()}, 1010)
             ui()
+            document.getElementById('inventory').style.opacity=0
+            setTimeout(function(){document.getElementById('inventory').style.opacity=1},1010)
             room(1)
-        },1010)//1010
-        
     }
 }

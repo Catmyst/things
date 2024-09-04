@@ -17,6 +17,8 @@
 @import url(display/rooms/room1/puzzles/15num/15num.css);
 @import url(display/rooms/room1/puzzles/bed/bed.css);
 @import url(display/rooms/room1/puzzles/clock/clock.css);
+/*room 2 puzzles*/
+@import url(display/rooms/room2/puzzles/bedroom/bedroominput.css);
 body{
     height: 100vh;
     width:100vh;
