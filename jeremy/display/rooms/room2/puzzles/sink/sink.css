@@ -1,0 +1,11 @@
+/*sink input*/
+#sinkinput{
+    opacity: 0.5;
+    background-color: white;
+    position:fixed;
+    z-index: 1;
+    top: 30vh;
+    left: 32.5vw;
+    height: 35vh;
+    width: 19vw;
+}

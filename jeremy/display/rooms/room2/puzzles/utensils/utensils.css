@@ -1,0 +1,11 @@
+/*utensils input*/
+#utensilsinput{
+    background-color: white;
+    opacity: 0.5;
+    position:fixed;
+    z-index: 1;
+    top: 36vh;
+    left: 53vw;
+    height: 28vh;
+    width: 24vw;
+}

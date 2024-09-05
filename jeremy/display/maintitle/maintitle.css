@@ -32,6 +32,14 @@
     margin-left: 34vw;
     font-size:5vw
 }
+#devtool{
+    position:fixed;
+    top:0;
+    left:0;
+    z-index: 2;
+    height:20vh;
+    width: 20vh;
+}
 #credit{
     position:relative;
     z-index: 2;

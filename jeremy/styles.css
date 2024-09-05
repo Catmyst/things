@@ -19,6 +19,11 @@
 @import url(display/rooms/room1/puzzles/clock/clock.css);
 /*room 2 puzzles*/
 @import url(display/rooms/room2/puzzles/bedroom/bedroominput.css);
+@import url(display/rooms/room2/puzzles/chand/chand.css);
+@import url(display/rooms/room2/puzzles/sink/sink.css);
+@import url(display/rooms/room2/puzzles/toilet/toilet.css);
+@import url(display/rooms/room2/puzzles/utensils/utensils.css);
+@import url(display/rooms/room2/puzzles/window/window.css);
 body{
     height: 100vh;
     width:100vh;

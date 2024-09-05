@@ -2,7 +2,7 @@
 function devtool(){
     document.getElementById("maintitle").remove();
     ui()
-    room(1)
+    room(2)
     unlockallslot()
 }
 function unlockallslot(){

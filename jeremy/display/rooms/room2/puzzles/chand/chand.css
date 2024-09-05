@@ -1,0 +1,11 @@
+/*chandelier input*/
+#chandinput{
+    opacity: 0.5;
+    background-color: white;
+    position:fixed;
+    z-index: 1;
+    top: 0;
+    left: 56vw;
+    height: 30vh;
+    width: 18vw;
+}

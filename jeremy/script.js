@@ -23,13 +23,21 @@ for(let i=1; i<18; i++){
 //puzzle template
 function puzzletemplate(type){
     const closepuzzlesfunctions = {
+        //room 1
         wardrobe: closewardrobe,
         puzzlebox: closepuzzlebox,
         diary: closediary,
         clock: closeclock,
+        //room 2
+        chand: closechand,
+        sink: closesink,
+        toilet: closetoilet,
+        utensils: closeutensils,
+        window: closewindow
     }
     console.log('close' + type)
-    let bg = document.getElementById('room1')
+    let getbg = document.getElementsByClassName("room")
+    let bg = getbg[0]
     bg.style.filter= 'blur(3px)'
     let oldspace = document.getElementById('puzzlespace')
     let close = document.getElementById('x')
@@ -52,7 +60,8 @@ function puzzletemplate(type){
     gamespace.appendChild(x)
 }
 function closepuzzle(){
-    let bg = document.getElementById('room1')
+    let getbg = document.getElementsByClassName("room")
+    let bg = getbg[0]
     bg.style.filter= ''
     let inv = document.getElementById('inventory')
     inv.style.zIndex = 1
@@ -88,7 +97,6 @@ function roompuzzles(num){
     console.log(room1complete)
     switch (num){
         case 1: 
-        console.log("wafwe")
         let room1 = document.getElementById('room1')
         let puzzleboxinput = document.createElement('div')
         puzzleboxinput.id= "puzzleboxinput"
@@ -125,5 +133,25 @@ function roompuzzles(num){
         bedroominput.id="bedroominput"
         bedroominput.onclick=function(){room(1)}
         room2.appendChild(bedroominput)
+        let chandinput = document.createElement('div')
+        chandinput.id="chandinput"
+        chandinput.onclick= openchand
+        room2.appendChild(chandinput)
+        let sinkinput = document.createElement('div')
+        sinkinput.id= "sinkinput"
+        sinkinput.onclick= opensink
+        room2.appendChild(sinkinput)
+        let toiletinput = document.createElement('div')
+        toiletinput.id="toiletinput"
+        toiletinput.onclick= opentoilet
+        room2.appendChild(toiletinput)
+        let utensilsinput = document.createElement('div')
+        utensilsinput.id="utensilsinput"
+        utensilsinput.onclick= openutensils
+        room2.appendChild(utensilsinput)
+        let windowinput = document.createElement('div')
+        windowinput.id="windowinput"
+        windowinput.onclick= openwindow
+        room2.appendChild(windowinput)
     }
 }
