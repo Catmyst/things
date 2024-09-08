@@ -1,8 +1,14 @@
 // room 2 sink js
 function opensink(){
-    puzzletemplate('sink')
-    let puzzlespace = document.getElementById('puzzlespace')
-    puzzlespace.innerHTML ='yes'
+    transtimer = setInterval(transition, 10)
+    let inv = document.getElementById('inventory')
+    inv.style.zIndex = -1
+    let screen = document.getElementById('transition')
+    screen.innerHTML = '<span>You turn on the tap, but something seems to be clogging the sink....</span>'
+    setTimeout(function(){
+        transtimer = setInterval(transition2,10)
+        inv.style.zIndex = 1
+    }, 3000)//4000
 }
 function closesink(){
     closepuzzle()

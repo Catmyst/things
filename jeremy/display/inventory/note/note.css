@@ -1,0 +1,9 @@
+/*slot 7 note*/
+#notelog{
+        font-family: 'Special Elite';
+        width: 100%;
+        height:100%;
+        color:white;
+        font-size:2vw;
+        overflow-y: scroll;
+}

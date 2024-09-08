@@ -9,3 +9,12 @@
     height: 23vh;
     width: 30vw;
 }
+.toiletitem{
+    position: fixed;
+    top: 0vh;
+    left: 0vh;
+    background-Size: cover;
+    background-Position: center;
+    width: 10vh;
+    height: 10vh;
+}

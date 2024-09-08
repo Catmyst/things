@@ -28,8 +28,18 @@ function unlockallslot(){
             src:'display/inventory/candle/unlitcandle.png',
             onclick: function(){hold("unlitcandle")}
         },
+        {
+            id:'wrench',
+            src:'display/inventory/wrench/wrench.png',
+            onclick: function(){hold("wrench")}
+        },
+        {
+            id:'plunger',
+            src:'display/inventory/plunger/plunger.png',
+            onclick: function(){hold("plunger")}
+        },
     ]
-    for(let i=1;i<=4;i++){
+    for(let i=1;i<=6;i++){
         let slotnumber = 'slot' + i.toString()
         let slotdiv = document.getElementById(slotnumber)
         let img = document.createElement('img')

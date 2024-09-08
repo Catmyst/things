@@ -9,6 +9,7 @@
 /*inventory & slots*/
 @import url(display/inventory/inventory.css);
 @import url(display/inventory/diary/diary.css);
+@import url(display/inventory/note/note.css);
 
 /*room 1 puzzles*/
 @import url(display/rooms/room1/room2eligibility.css);

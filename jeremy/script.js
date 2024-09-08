@@ -29,6 +29,7 @@ function puzzletemplate(type){
         diary: closediary,
         clock: closeclock,
         //room 2
+        note: closenote,
         chand: closechand,
         sink: closesink,
         toilet: closetoilet,
@@ -91,7 +92,7 @@ function room(num){
             roomnew.className ='room'
             gamespace.appendChild(roomnew)
             roompuzzles(num)
-            },1100)
+            },2000)
 }
 function roompuzzles(num){
     console.log(room1complete)

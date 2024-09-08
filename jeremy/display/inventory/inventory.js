@@ -80,6 +80,51 @@ function hold(item){
                 console.log("you are no longer holding an item")
             }
             break;
+             case "key":
+            if(holdingitem !='key'){
+                for(let i=0; i<17; i++){
+                    slotelements[i].style.borderColor='#343a40'
+            }   
+                slotelements[1].style.borderColor='white'
+                console.log("you are now holding the key")
+                holdingitem = 'key'
+            }
+            else if(holdingitem=='key'){
+                document.getElementById('slot2').style.borderColor='#343a40'
+                holdingitem=''
+                console.log("you are no longer holding an item")
+            }
+            break;
+         case "wrench":
+            if(holdingitem !='wrench'){
+                for(let i=0; i<17; i++){
+                    slotelements[i].style.borderColor='#343a40'
+            }   
+                slotelements[4].style.borderColor='white'
+                console.log("you are now holding the wrench")
+                holdingitem = 'wrench'
+            }
+            else if(holdingitem=='wrench'){
+                document.getElementById('slot5').style.borderColor='#343a40'
+                holdingitem=''
+                console.log("you are no longer holding an item")
+            }
+            break;
+        case "plunger":
+            if(holdingitem !='plunger'){
+                for(let i=0; i<17; i++){
+                    slotelements[i].style.borderColor='#343a40'
+            }   
+                slotelements[5].style.borderColor='white'
+                console.log("you are now holding the plunger")
+                holdingitem = 'plunger'
+            }
+            else if(holdingitem=='plunger'){
+                document.getElementById('slot6').style.borderColor='#343a40'
+                holdingitem=''
+                console.log("you are no longer holding an item")
+            }
+            break;
     }
 }
 
