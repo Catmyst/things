@@ -4,7 +4,7 @@
     z-index: 1;
     background-color: #212529;
     border: 2px solid #343a40;
-    top: 85vh;
+    bottom: 0vh;
     left: 50%;
     transform: translate(-50%, -50%);
     height:4vw;
