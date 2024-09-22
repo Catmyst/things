@@ -1,11 +1,47 @@
 /*sink input*/
 #sinkinput{
-    opacity: 0.5;
-    background-color: white;
     position:fixed;
     z-index: 1;
     top: 30vh;
     left: 32.5vw;
     height: 35vh;
     width: 19vw;
+}
+.pipediv{
+    background-size: cover;
+    background-repeat: no-repeat;
+    position:relative;
+    z-index: 1;
+    border: 2px solid #343a40;
+    align-content: flex-start;
+    height:33.33%;
+    width: 33.33%;
+    box-sizing: border-box;
+}
+#pipe11{
+    background-image: url(puzzlepieces/1-1.png);
+}
+#pipe21{
+    background-image: url(puzzlepieces/2-1.png);
+}
+#pipe31{
+    background-image: url(puzzlepieces/3-1.png);
+}
+#pipe12{
+    background-image: url(puzzlepieces/1-2.png);
+}
+#pipe22{
+    background-image: url(puzzlepieces/2-2.png);
+}
+#pipe32{
+    background-image: url(puzzlepieces/3-2.png);
+}
+#pipe13{
+    background-image: url(puzzlepieces/1-3.png);
+}
+#pipe23{
+    background-image: url(puzzlepieces/2-3.png);
+}
+#pipe33{
+    background-image: url(puzzlepieces/3-3.png);
 }

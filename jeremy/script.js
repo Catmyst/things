@@ -1,7 +1,14 @@
 let transtimer; //transition timer
+let idleendingtimer;//??? ending timer
 //user interface
 function ui(){
+idleendingtimer = setTimeout(function(){idleending()}, 60000)
 let gamespace = document.createElement('div')
+gamespace.onclick= function(){
+    console.log("idle ending canceled")
+    clearTimeout(idleendingtimer)
+    gamespace.onclick=''
+}
 gamespace.id='gamespace'
 document.body.appendChild(gamespace)
 inventory()
@@ -28,15 +35,15 @@ function puzzletemplate(type){
         puzzlebox: closepuzzlebox,
         diary: closediary,
         clock: closeclock,
+        exit:closeexit,
         //room 2
         note: closenote,
-        chand: closechand,
         sink: closesink,
         toilet: closetoilet,
         utensils: closeutensils,
         window: closewindow
+
     }
-    console.log('close' + type)
     let getbg = document.getElementsByClassName("room")
     let bg = getbg[0]
     bg.style.filter= 'blur(3px)'
@@ -95,7 +102,6 @@ function room(num){
             },2000)
 }
 function roompuzzles(num){
-    console.log(room1complete)
     switch (num){
         case 1: 
         let room1 = document.getElementById('room1')
@@ -127,6 +133,10 @@ function roompuzzles(num){
             bedinput.onclick=''
             mirrorinput.onclick=''
         }
+        let exitinput = document.createElement('div')
+        exitinput.id="exitinput"
+        exitinput.onclick=function(){openexit()}
+        room1.appendChild(exitinput)
         break;
         case 2:
         let room2 = document.getElementById("room2")

@@ -1,6 +1,7 @@
 //room1 bed
-
+let bedfinish = false;
 function openbed(){
+bedfinish = true
 transtimer = setInterval(transition, 10)
 let inv = document.getElementById('inventory')
 inv.style.zIndex = -1

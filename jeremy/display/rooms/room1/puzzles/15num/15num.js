@@ -1,7 +1,6 @@
 //room1 puzzle box
 let finishpuzzlebox = false;
 function openpuzzlebox(){
-    console.log("asdfasdfa")
     puzzletemplate('puzzlebox')
     let numbersarray=[]
     for(let i = 1; i<=15; i++){

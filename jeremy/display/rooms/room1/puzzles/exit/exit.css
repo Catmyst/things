@@ -1,0 +1,9 @@
+/*room 1 exit door*/
+#exitinput{
+        position:fixed;
+        z-index: 1;
+        top: 24.9vh;
+        left: 84vw;
+        height: 34vh;
+        width: 12vw;
+}

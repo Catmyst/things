@@ -1,5 +1,10 @@
 /*slot 7 note*/
 #notelog{
+        text-align: center;
+        display: flex;
+        justify-content: center;  
+        align-items: center;    
+        font-style: italic;
         font-family: 'Special Elite';
         width: 100%;
         height:100%;

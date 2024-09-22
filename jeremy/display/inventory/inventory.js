@@ -125,6 +125,21 @@ function hold(item){
                 console.log("you are no longer holding an item")
             }
             break;
+        case "masterkey":
+        if(holdingitem !='masterkey'){
+            for(let i=0; i<17; i++){
+                slotelements[i].style.borderColor='#343a40'
+        }   
+            slotelements[7].style.borderColor='white'
+            console.log("you are now holding the masterkey")
+            holdingitem = 'masterkey'
+        }
+        else if(holdingitem=='masterkey'){
+            document.getElementById('slot8').style.borderColor='#343a40'
+            holdingitem=''
+            console.log("you are no longer holding an item")
+        }
+        break;
     }
 }
 

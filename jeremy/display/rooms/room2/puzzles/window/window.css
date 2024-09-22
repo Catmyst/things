@@ -1,11 +1,24 @@
 /*window input*/
 #windowinput{
-    opacity: 0.5;
-    background-color: white;
     position:fixed;
     z-index: 1;
     top: 10vh;
     left: 0vw;
     height: 62vh;
     width: 18vw;
+}
+.windowblank, .windowred{
+    position:relative;
+    z-index: 1;
+    border: 2px solid #343a40;
+    align-content: flex-start;
+    height:15.66%;
+    width: 15.66%;
+    box-sizing: border-box;
+}
+.windowblank{
+    background-color: #212529;
+}
+.windowred{
+    background-color: red;
 }

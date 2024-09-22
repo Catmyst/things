@@ -2,7 +2,7 @@
 function devtool(){
     document.getElementById("maintitle").remove();
     ui()
-    room(2)
+    room(1)
     unlockallslot()
 }
 function unlockallslot(){
@@ -38,8 +38,18 @@ function unlockallslot(){
             src:'display/inventory/plunger/plunger.png',
             onclick: function(){hold("plunger")}
         },
+        {
+            id:'note',
+            src:'display/inventory/note/note.png',
+            onclick: function(){opennote()}
+        },
+        {
+            id:'masterkey',
+            src:'display/inventory/masterkey/masterkey.png',
+            onclick: function(){hold('masterkey')}
+        },
     ]
-    for(let i=1;i<=6;i++){
+    for(let i=1;i<=itemslist.length-1;i++){
         let slotnumber = 'slot' + i.toString()
         let slotdiv = document.getElementById(slotnumber)
         let img = document.createElement('img')

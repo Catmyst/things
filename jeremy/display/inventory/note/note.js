@@ -6,7 +6,7 @@ function opennote(){
     let notelog = document.createElement('span')
     notelog.id = 'notelog'
     puzzlespace.appendChild(notelog)
-    notelog.innerHTML = '8y'
+    notelog.innerHTML = 'As a \"young\" man once observed, when light passes through narrow slits, it can produce interference patterns that reveal fascinating and intricate patterns. These patterns emerge due to the way light waves overlap and interact with each other, creating a visual display that showcases the remarkable principles of wave interference.'
 }
 function closenote(){
     closepuzzle()
