@@ -28,5 +28,5 @@ function showcredit(){
     creditspace.appendChild(creditcontent)
     creditcontent.appendChild(creditTitle)
     creditxspace.appendChild(creditx)
-    creditcontent.innerHTML +="design & images: CrAiyon;<br>storyTelling: Me;<br> Programming: me;<br> qualitY aSsurance Tester: me;<br>"
+    creditcontent.innerHTML +="hey, I made this game entirely by myself! (apart from the images which i took from craiyon), hope you have fun! :D<br><a style='text-shadow: 0'href='https://www.instagram.com/catmyst_'>~Catmyst</a>"
 }
