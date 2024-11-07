@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .tab{
+            border: 3px solid black;
+            position: fixed;
+            left: 9vw;
+            width: 18vw;
+            top: 44vh;
+            height: 56vh;
+        }
+        #mage, #range{
+            text-align: center;
+            border: 1px solid black;
+            position: fixed;
+            top: calc(44vh + 30px);
+            height: 25px;
+            width: 25px;
+        }
+        #mage{
+            left: calc(9vw + 30px);
+
+        }
+        #range{
+            left: calc(9vw + 60px);
+        }
+        #reset{
+            position:fixed;
+            top: 90vh;
+        }
+        #alert{
+            position:fixed;
+            top:50vh;
+            left:75vw;
+        }
+    </style>
+    <h3>last prayer: <span id="lastprayer">-</span></h3>
+    <h3>last prayer tick: <span id="lasttick">0.605</span></h3>
+    <h3>correct prayers: <span id="correct">0</span></h3>
+    <div class="tab">
+        <div id="mage" onclick="pray('mage')">m</div>
+        <div id="range" onclick="pray('range')">r</div>
+    </div>
+    <div id="alert"></div>
+    <button id="reset" onclick="reset()">reset</button>
+<script>
+    const lastprayer = document.getElementById("lastprayer");
+    const lasttick = document.getElementById("lasttick");
+    const correct = document.getElementById("correct");
+    const mage = document.getElementById("mage");
+    const range = document.getElementById("range");
+    const alert = document.getElementById("alert");
+
+    let ticks = 0.605
+    let starttimer = false;
+    let timer;
+    function tick(){
+        if (ticks > 1.200){
+            reset()
+        }
+        ticks = 0.005 + parseFloat(lasttick.innerHTML)
+        lasttick.innerHTML = ticks.toFixed(3)
+    }
+    function reset(){
+        alert.innerHTML ="you is kill"
+        console.log('reset')
+        ticks = 0.605;
+        lasttick.innerHTML = 0.605;
+        starttimer = false;
+        correct.innerHTML = 0
+        clearInterval(timer)
+    }
+    function pray(type){
+        alert.innerHTML = ''
+        typenow = lastprayer.innerHTML
+        if(ticks < 0.001 || type == typenow){
+            reset()
+            return;
+        }
+        if(starttimer == false){
+            starttimer = true;
+            timer = setInterval(
+                function(){
+                    tick()
+                },5
+            )
+        }
+        correct.innerHTML = parseInt(correct.innerHTML) + 1
+        lastprayer.innerHTML = type;
+        ticks -= 0.6
+        lasttick.innerHTML = ticks.toFixed(3)
+
+    }
+</script>
+</body>
+</html>
