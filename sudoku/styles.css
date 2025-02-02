@@ -1,0 +1,42 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    width: 100vw;
+    margin: 0;
+}
+#title{
+    height: 5vh;
+    text-align: center;
+}
+#bigSquare{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 63vh;
+    width: 63vh;
+    border: 5px solid black;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 7vh;
+    width: 63vh;
+}
+.square{
+    font-size: 4vh;
+    display: block;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    height: 7vh;
+    width: 7vh;
+    padding: 0;
+    border: 1px solid black;
+    text-align: center;
+}
