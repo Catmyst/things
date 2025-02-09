@@ -7,7 +7,9 @@
     <title>Heads Up Sudoku</title>
 </head>
 <body>
-    <div class="button" onclick="checkValidity()">check validity</div>
+    <div class="button" onclick="swap('row')">swap random row</div>
+    <div class="button" onclick="swap('column')">swap random column</div>
+    <div>Changes: <span id="changes"></span></div>
     <h1 id="title">Heads Up Sudoku!</h1>
     <div id="bigSquare">
 

@@ -1,4 +1,5 @@
 summonBox();
+removeBox(2); //change accordingly
 function summonBox(){
     for (let i = 1; i <= 9; i++){
         let row = document.createElement("span");
@@ -17,6 +18,17 @@ function summonBox(){
             document.getElementById(rowNumber).appendChild(square);
         }
     }
+    for (let i = 0; i < 100; i++){
+        swap('row');
+        swap('column');
+    }
+}
+function removeBox(amount){
+    for (let i = 0; i < amount; i++){
+        let row = Math.ceil(Math.random() * 9);
+        let column = Math.ceil(Math.random() * 9);
+        document.getElementById(`n${row}${column}`).value = ``;
+    }
 }
 function inputCheck(row, column){
     var chosenSquareNumber = "n" + row + column;
@@ -34,19 +46,15 @@ function inputCheck(row, column){
 
 }
 
-/*setInterval(function(){
+setInterval(function(){
     checkValidity();
 }, 5
-)*/
+)
 function checkValidity(){
     let squares = document.getElementsByClassName("square");
     for (let i = 0; i < squares.length; i++){
         squares[i].style.color = "black"
     }
-
-    // i = row, j = column
-    let correctrow = 0;
-    let correctcolumn = 0;
     for (let row = 1; row <= 9; row++){
         for (let column = 1; column <=9; column++){
             // check row
@@ -59,9 +67,7 @@ function checkValidity(){
                     square.style.color = "red"
                     kSquare.style.color = "red"
                     console.log(`same number on row (${kSquareNumber} & ${squareNumber})`)
-                } else{
-                    correctrow++
-                };
+                } else{};
             }
             // check column
             for (let l = column-1; l >=1; l--){
@@ -73,9 +79,7 @@ function checkValidity(){
                     square.style.color = "red"
                     lSquare.style.color = "red"
                     console.log(`same number on column (${lSquareNumber} & ${squareNumber})`)
-                } else{
-                    correctcolumn++
-                };
+                } else{};
             }
             // check square
             for (let m = 0; m <= 2; m++){
@@ -99,5 +103,39 @@ function checkValidity(){
             }
         }
     }
-    console.log(correctrow,correctcolumn);
 }
+
+function swap(type){
+    let boxIndex = (Math.ceil(Math.random() * 3));
+    let xIndex = 3 * boxIndex - (Math.floor(Math.random() * 3));
+    let yIndex = 3 * boxIndex - (Math.floor(Math.random() * 3));
+    while (true){
+        if (xIndex == yIndex){
+            yIndex = 3 * boxIndex - (Math.floor(Math.random() * 3));
+        } else {break;}
+    }
+    
+    if(type == "row"){
+        for (let i = 1; i <= 9; i++){
+            let square1Old = document.getElementById(`n${xIndex}${i}`).value;
+            let square2Old = document.getElementById(`n${yIndex}${i}`).value;
+            let square1New = square2Old;
+            let square2New = square1Old;
+            document.getElementById(`n${xIndex}${i}`).value = square1New;
+            document.getElementById(`n${yIndex}${i}`).value = square2New;
+        }
+        document.getElementById("changes").innerHTML = `*swapped: row (${xIndex} with ${yIndex})`
+    } else if(type == "column"){
+        for (let i = 1; i <= 9; i++){
+            let square1Old = document.getElementById(`n${i}${xIndex}`).value;
+            let square2Old = document.getElementById(`n${i}${yIndex}`).value;
+            let square1New = square2Old;
+            let square2New = square1Old;
+            document.getElementById(`n${i}${xIndex}`).value = square1New;
+            document.getElementById(`n${i}${yIndex}`).value = square2New;
+        }
+        document.getElementById("changes").innerHTML = `*swapped: column (${xIndex} with ${yIndex})`
+    }
+
+}
+
