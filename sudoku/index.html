@@ -7,8 +7,10 @@
     <title>Heads Up Sudoku</title>
 </head>
 <body>
-    <div class="button" onclick="swap('row')">swap random row</div>
-    <div class="button" onclick="swap('column')">swap random column</div>
+    <div class="button" onclick="log()">console log</div>
+    <div class="button" onclick="board('set')">set most effective board</div>
+    <div class="button" onclick="board('del')">delete squares on most effective board</div>
+    <div style="display: flex; flex-direction: row;"><input id="amount" type="number" style="width: 20px; margin-right: 1vh;"> <div onclick="removeBox()" style="border: 1px solid black;">remove x amount of box</div> </div>
     <div>Changes: <span id="changes"></span></div>
     <h1 id="title">Heads Up Sudoku!</h1>
     <div id="bigSquare">

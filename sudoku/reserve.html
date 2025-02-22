@@ -1,0 +1,83 @@
+/*let isRemovalHalt = false;
+let faultySquares = -1;
+let lastRemovedSquareIndexBefore = 0;
+let lastRemovedSquareIndex = [];
+let lastRemovedSquareValue = [];
+function removeBox(){
+    let i = 0;
+    let startFunction = performance.now();
+    if(lastRemovedSquareIndexBefore < lastRemovedSquareIndex.length){
+        lastRemovedSquareIndexBefore = lastRemovedSquareIndex.length
+    }
+    
+    if (isRemovalHalt == true){
+        for (let i = 1; i <= faultySquares; i++){
+            let lastNumber = lastRemovedSquareIndex.length
+            isRemovalHalt = false;
+            document.getElementById(lastRemovedSquareIndex[lastNumber - i]).value = lastRemovedSquareValue[lastNumber - i]
+            lastRemovedSquareValue.splice(lastNumber - 1,1)
+            lastRemovedSquareIndex.splice(lastNumber - 1,1)
+        }
+        return;
+    }
+        while (i < 80){
+            while (true){
+                let targetSquare;
+                let targetSquareInitialValue;
+                while(true){
+                    let row = Math.ceil(Math.random() * 9);
+                    let column = Math.ceil(Math.random() * 9);
+                    targetSquare = document.getElementById(`n${row}${column}`);
+                    targetSquareInitialValue = targetSquare.value;
+                    if(targetSquare.value == ``){
+
+                    } else{
+                        targetSquare.value = ``;
+                        break;
+                    };
+                }
+                let validNumberForCurrentSquare = [1,2,3,4,5,6,7,8,9]
+                for(j = 0; j < 9; j++){
+                    targetSquare.value = j + 1;
+                    let isValid = checkValidity();
+                    if(isValid == true){
+                        targetSquare.value = ``
+                    }
+                    else{
+                        targetSquare.value = ``
+                        delete validNumberForCurrentSquare[j];
+                    }
+                }
+                validNumberForCurrentSquare = validNumberForCurrentSquare.filter(item => item !== undefined && item !== null && item !== '');
+                console.log(targetSquare.id, validNumberForCurrentSquare)
+                if(validNumberForCurrentSquare.length == 1){
+                        if (lastRemovedSquareIndex.includes(targetSquare.id) == false){
+                            lastRemovedSquareIndex.push(targetSquare.id);
+                            lastRemovedSquareValue.push(targetSquareInitialValue);
+                        }
+                    break;
+                } else{targetSquare.value = targetSquareInitialValue;}
+                if(performance.now() - startFunction> 1000){
+                    break;
+                }
+            }
+        i += 1;
+        console.log(i)
+        console.log(lastRemovedSquareIndex.length, lastRemovedSquareIndexBefore)
+        }
+    if (lastRemovedSquareIndex.length > lastRemovedSquareIndexBefore && faultySquares != -1){
+        faultySquares = 0;
+    }
+    if (lastRemovedSquareIndex.length < 50){
+        isRemovalHalt = true;
+        faultySquares += 1;
+    }
+    if (lastRemovedSquareIndexBefore == 0){
+        isRemovalHalt = false;
+    }
+    else if (lastRemovedSquareIndex >= 50) {
+        console.log("removal done!")
+    }
+    
+}
+// issue fix removal array to be accurate to current removal*/
