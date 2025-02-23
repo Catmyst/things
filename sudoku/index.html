@@ -7,15 +7,29 @@
     <title>Heads Up Sudoku</title>
 </head>
 <body>
-    <div class="button" onclick="log()">console log</div>
-    <div class="button" onclick="board('set')">set most effective board</div>
-    <div class="button" onclick="board('del')">delete squares on most effective board</div>
-    <div style="display: flex; flex-direction: row;"><input id="amount" type="number" style="width: 20px; margin-right: 1vh;"> <div onclick="removeBox()" style="border: 1px solid black;">remove x amount of box</div> </div>
-    <div>Changes: <span id="changes"></span></div>
-    <h1 id="title">Heads Up Sudoku!</h1>
+    <h1 id="title" style="margin: 0">Heads Up Sudoku!</h1>
+    <p id="alert" style="margin: 0 0 1vh 0; color: limegreen"></p>
+    <div style="margin: 0; display: flex; flex-direction: row; gap: 1vh; margin-bottom: 1vh;">
+        <div id="pencil" onclick="pencil()" style="border: 1px solid black; padding: 1vh; font-size: 3vh; background-color: red; color: white;">✎</div>
+        <div onclick="summonBox()" style="border: 1px solid black; padding: 1vh; font-size: 3vh;">New Board</div> 
+        <div style="display: flex; flex-direction: row; gap: 1vh; padding: 1vh; font-size: 3vh;">Time Spent:
+            <div id='time'>
+                <span id="hour">00</span>:
+                <span id="minute">00</span>:
+                <span id="second">00</span>
+            </div>
+        </div>
+    </div>
+    <h2 style ="margin: 0 0 0 1.3vh;letter-spacing: 2.34vh; font-size: 3vh;"><span style="color: red">1 2 3</span> <span style="color: green">4 5 6</span> <span style="color: blue">7 8 9</span></h2>
+    <h2 style ="position:absolute; left: 0; top: 27vh; width: 7vh; margin: 0 0 0 1.3vh; letter-spacing: 2.34vh; line-height: 7vh; font-size: 3vh;"><span style="color: red">1 2 3</span> <span style="color: green">4 5 6</span> <span style="color: blue">7 8 9</span></h2>
+
     <div id="bigSquare">
 
     </div>
+    <div id="pencilSquare" style="background-color: green;">
+    
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

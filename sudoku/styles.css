@@ -19,6 +19,21 @@ body{
     height: 63vh;
     width: 63vh;
     border: 5px solid black;
+    z-index: 1;
+}
+#pencilSquare{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    bottom: 9.7vh;
+    height: 63vh;
+    width: 63vh;
+    border: 5px solid black;
+    opacity: 0.5;
+    z-index: 0;
 }
 .row{
     display: flex;
@@ -28,7 +43,7 @@ body{
     height: 7vh;
     width: 63vh;
 }
-.square{
+.square, .pencilSquare{
     font-size: 4vh;
     display: block;
     box-sizing: border-box;
@@ -40,6 +55,10 @@ body{
     border: 1px solid black;
     text-align: center;
 }
+.pencilSquare {
+    font-size: 2vh;
+}
+
 .button{
     border: 1px solid black;
 }
